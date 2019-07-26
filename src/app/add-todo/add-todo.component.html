@@ -1,0 +1,17 @@
+<div [className]="'container'">
+   <div [className]="'col-6'">
+      <div class="form-group">
+         <label for="description">Description</label>
+         <input type="text" class="form-control" id="description" placeholder="Enter Description"
+            [(ngModel)]="description" />
+      </div>
+      <div class="form-group">
+         <label for="room">Select Family Member</label>
+         <select class="form-control" id="room" [(ngModel)]="member">
+            <option *ngFor="let member of membersData" [id]="member['id']" [value]="member['id']">{{member['name']}}
+            </option>
+         </select>
+      </div>
+      <button class="btn btn-primary" (click)="addTask()">Add Todo</button>
+   </div>
+</div>

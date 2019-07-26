@@ -1,0 +1,26 @@
+<div [className]="'container'">
+   <h1>Home Management</h1>
+   <br />
+   <br />
+   <button type="button" class="btn btn-primary" (click)="onClick()" [ngStyle]="{'position': 'absolute',
+     'top': '13%', 'right': '6%'}">
+      Add Todo</button>
+   <table [className]="'table table-dark'">
+      <thead>
+         <tr>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th></th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let task of tasks">
+            <td>{{task.description}}</td>
+            <td>{{task.date}}</td>
+            <td>{{task.name}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteTask(task.id)">Delete</button></td>
+         </tr>
+      </tbody>
+   </table>
+</div>
